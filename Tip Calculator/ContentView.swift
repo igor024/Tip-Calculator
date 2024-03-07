@@ -8,12 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var amount = 0
+    @State private var percent: Double? = 0
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Tip Calculator")
+                .font(.title)
+                .padding()
+            HStack {
+                Text("Bill: $")
+                    .font(.body)
+                    .padding(0)
+                TextField("Enter your score", value: $amount, formatter: NumberFormatter())
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.body)
+                    .padding(0)
+            }
+            
         }
         .padding()
     }
